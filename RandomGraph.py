@@ -1,7 +1,7 @@
 from Graph import *
 from graphworld import *
 import random
-from collections import deque
+import string
 
 class RandomGraph(Graph):
     
@@ -17,6 +17,23 @@ class RandomGraph(Graph):
                 if random.random() > p: continue
                 self.add_edge(Edge(v, w))
 
+def test_graph(n, p):
+    vertex_labels = string.ascii_lowercase[:n]
+    vs = [Vertex(c) for c in vertex_labels]
+    
+    g = RandomGraph(vs)
+    g.add_random_edges(p=p)
+    return g.is_connected()
+    
+def test_p(n, p, num):
+    """ Generates the number of graphs (num) with n vertices
+    and p probability and returns how many of which are connected
+    """
+    count = 0 
+    for i in range(num):
+        if test_graph(n, p):
+            count += 1
+    return count
                 
 if __name__ == '__main__':
     # create a graph and a layout

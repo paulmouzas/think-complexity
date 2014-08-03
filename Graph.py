@@ -6,6 +6,7 @@ http://greenteapress.com/complexity
 Copyright 2011 Allen B. Downey.
 Distributed under the GNU General Public License at gnu.org/licenses/gpl.html.
 """
+from collections import deque
 
 def is_odd(n):
     return n%2 == 1
