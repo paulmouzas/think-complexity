@@ -1,0 +1,1 @@
+Going through Allen Downey's book, [*Think Complexity*](http://greenteapress.com/complexity/).
