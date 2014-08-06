@@ -96,7 +96,7 @@ class Graph(dict):
             return self[v][w]
         except KeyError:
             return None
-
+    has_edge = get_edge
     def out_vertices(self, v):
         return self[v].keys()
 
